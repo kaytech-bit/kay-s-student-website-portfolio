@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Interactive academic planner: add tasks, mark them done, delete them, and calculate CGPA.">
+<title>Academic Planner | Clement Idongesit Sunday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">Clement<span>.</span></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="academics.html">Academics</a>
+      <a href="planner.html" class="active" aria-current="page">Planner</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch light or dark theme">🌓</button>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-head"><div class="container"><h1>Academic planner</h1><p>Plan your assignments and see your CGPA. Everything is saved in this browser only.</p></div></section>
+
+<section class="section">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><b id="stat-pending">0</b><span>Tasks pending</span></div>
+      <div class="stat"><b id="stat-done">0</b><span>Tasks done</span></div>
+      <div class="stat"><b id="stat-gpa">–</b><span>Current CGPA (5.0 scale)</span></div>
+    </div>
+
+    <div class="grid cols-2">
+      <div class="panel gold">
+        <h2>Tasks</h2>
+        <form id="task-form" class="stack-form" novalidate>
+          <label>Task <input name="title" type="text" placeholder="Submit CSC 101 assignment" required></label>
+          <div class="row">
+            <label>Course <input name="course" type="text" placeholder="CSC 101"></label>
+            <label>Due date <input name="due" type="date"></label>
+            <label>Priority
+              <select name="priority"><option value="medium">Medium</option><option value="high">High</option><option value="low">Low</option></select>
+            </label>
+          </div>
+          <p class="error" id="task-error" role="alert"></p>
+          <button class="btn primary" type="submit">Add task</button>
+        </form>
+        <div class="filters" style="margin-top:1.4rem">
+          <button class="chip on" type="button" data-task-filter="all">All</button>
+          <button class="chip" type="button" data-task-filter="pending">Pending</button>
+          <button class="chip" type="button" data-task-filter="done">Done</button>
+        </div>
+        <ul class="task-list" id="task-list" aria-live="polite"></ul>
+      </div>
+
+      <div class="panel leaf">
+        <h2>CGPA calculator</h2>
+        <table class="gpa-table">
+          <thead><tr><th>Course</th><th>Units</th><th>Grade</th><th></th></tr></thead>
+          <tbody id="gpa-body"></tbody>
+        </table>
+        <div class="actions">
+          <button class="btn" type="button" id="add-course">Add course</button>
+          <button class="btn" type="button" id="reset-courses">Clear all</button>
+        </div>
+        <p class="gpa-result" id="gpa-value" style="margin-top:1.4rem;margin-bottom:0">–</p>
+        <p class="muted" id="gpa-units">0 credit units counted</p>
+        <p><strong id="gpa-class"></strong></p>
+        <p class="muted" style="font-size:.9rem">Grades: A = 5, B = 4, C = 3, D = 2, E = 1, F = 0.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© <span id="year">2026</span> Clement Idongesit Sunday. Miva University, Computer Science.</span>
+    <span><a href="https://github.com/kaytech-bit" rel="noopener">GitHub</a> · <a href="contact.html">Contact</a></span>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/planner.js"></script>
+</body>
+</html>

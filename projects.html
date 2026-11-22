@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Projects by Clement Idongesit Sunday in security analysis, networking and web development.">
+<title>Projects | Clement Idongesit Sunday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">Clement<span>.</span></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html" class="active" aria-current="page">Projects</a>
+      <a href="academics.html">Academics</a>
+      <a href="planner.html">Planner</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch light or dark theme">🌓</button>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-head"><div class="container"><h1>Projects</h1><p>Hands-on work in log analysis, traffic analysis and the web.</p></div></section>
+
+<section class="section">
+  <div class="container">
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button class="chip on" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-filter="security" aria-pressed="false">Security</button>
+      <button class="chip" type="button" data-filter="web" aria-pressed="false">Web</button>
+    </div>
+    <div class="grid cols-3">
+<article class="panel project" data-cat="security"><figure><img src="images/project-splunk.svg" alt="Splunk dashboard charting failed logins by hour with a spike at 4 a.m." width="800" height="500" loading="lazy"></figure><h3>Splunk log investigation</h3><p class="stack">Splunk · SPL · Windows Event Logs</p><p>Searched Windows event data with SPL to spot failed logins and suspicious activity, then mapped the findings to MITRE ATT&amp;CK.</p><div class="links"><a href="#">Write-up (coming soon)</a></div></article><article class="panel project" data-cat="security"><figure><img src="images/project-wireshark.svg" alt="Wireshark packet list showing a TCP handshake followed by an HTTP request" width="800" height="500" loading="lazy"></figure><h3>Network traffic analysis</h3><p class="stack">Wireshark · Linux</p><p>Captured and inspected packets to follow a connection from handshake to teardown and flag traffic that looked wrong.</p><div class="links"><a href="#">Write-up (coming soon)</a></div></article><article class="panel project" data-cat="web"><figure><img src="images/project-portfolio.svg" alt="Homepage of this portfolio website with a task list below the introduction" width="800" height="500" loading="lazy"></figure><h3>Student portfolio and academic planner</h3><p class="stack">HTML · CSS · JavaScript</p><p>This website. A responsive multi-page portfolio with a task planner and CGPA calculator that save data in your browser.</p><div class="links"><a href="index.html">View the site</a> <a href="https://github.com/kaytech-bit/kay-s-student-website" rel="noopener">Source code</a></div></article>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© <span id="year">2026</span> Clement Idongesit Sunday. Miva University, Computer Science.</span>
+    <span><a href="https://github.com/kaytech-bit" rel="noopener">GitHub</a> · <a href="contact.html">Contact</a></span>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
